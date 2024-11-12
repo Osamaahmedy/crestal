@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل مع الفريلانسرز</title>
+    <script>
+        function openWhatsAppChat(phone, freelancerName) {
+            var yourName = document.getElementById("yourName").value;
+            var message = encodeURIComponent("مرحبًا " + freelancerName + "، أنا " + yourName + " مهتم بخدماتك.");
+            var whatsappUrl = "https://wa.me/" + phone + "?text=" + message;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <h1>قائمة الفريلانسرز</h1>
+
+    <!-- إدخال اسم المستخدم -->
+    <label for="yourName">اسمك:</label>
+    <input type="text" id="yourName" placeholder="أدخل اسمك هنا" required>
+    <br><br>
+
+    <!-- قائمة الفريلانسرز -->
+    <div id="freelancers">
+        <!-- افترض أن هذه البيانات تُجلب من قاعدة البيانات -->
+        <p>Ali: <button onclick="openWhatsAppChat('15551234567', 'Ali')">تواصل عبر واتساب</button></p>
+        <p>Sara: <button onclick="openWhatsAppChat('15559876543', 'Sara')">تواصل عبر واتساب</button></p>
+        <!-- يمكنك إضافة المزيد من الفريلانسرز هنا -->
+    </div>
+
+</body>
+</html>
